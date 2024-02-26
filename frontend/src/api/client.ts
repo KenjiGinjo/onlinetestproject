@@ -1,22 +1,23 @@
-import { initClient } from '@ts-rest/core';
-import { contract } from './contract';
+import { initClient } from "@ts-rest/core";
+import { contract } from "./contract";
 import axios, {
   Method,
   AxiosError,
   AxiosResponse,
   isAxiosError,
   AxiosHeaders,
-} from 'axios';
+} from "axios";
+import { API_BASE_URL } from "@/config";
 export const client = initClient(contract, {
-  baseUrl: process.env.API_BASE_URL as string,
+  baseUrl: API_BASE_URL as string,
   baseHeaders: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
   api: async ({ path, method, headers, body }) => {
     try {
       const result = await axios.request({
         method: method as Method,
-        url: `${process.env.API_BASE_URL as string}/${path}`,
+        url: `${path}`,
         headers: headers as AxiosHeaders,
         data: body,
       });
