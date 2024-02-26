@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import LayoutVue from "@/pages/Layout.vue";
+import UsersVue from "@/pages/user/Users.vue";
+</script>
 <template>
-  <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <LayoutVue>
+    <UsersVue />
+  </LayoutVue>
 </template>
