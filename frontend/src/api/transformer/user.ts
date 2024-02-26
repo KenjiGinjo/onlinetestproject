@@ -1,10 +1,6 @@
-import { Expose } from 'class-transformer';
-import { EnumUserGender } from '@/enums';
-export class DctUser {
-  @Expose()
+import { EnumUserGender } from "@/enums";
+export type DctUser = {
   id: number;
-  @Expose()
   name: string;
-  @Expose()
   gender: EnumUserGender;
-}
+};
