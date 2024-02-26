@@ -1,5 +1,5 @@
-import { Expose } from "class-transformer";
-
+import { Expose } from 'class-transformer';
+import { EnumUserGender } from '@/enums';
 export class DctUser {
   @Expose()
   id: number;
